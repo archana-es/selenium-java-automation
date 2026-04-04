@@ -3,8 +3,11 @@ package com.archana;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -36,6 +39,15 @@ public class Main {
         driver.findElement(By.cssSelector("input[type='text']:nth-child(4)")).sendKeys("1234567890");
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.xpath("//button[2]")).click();
+        driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[1]")).click();
+        driver.findElement(By.cssSelector("#inputUsername")).sendKeys("rahul");
+        driver.findElement(By.cssSelector("input[type*=pass]")).sendKeys("rahulshettyacademy");
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("chkboxOne"))).click();
+        //WebElement checkbox = wait.until(ExpectedConditions.elementToBeClickable(By.id("chkboxOne"))).click();
+        // checkbox.click();
+        //driver.findElement(By.id("chkboxOne")).click();
+        driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
         //driver.quit();
 
     }
