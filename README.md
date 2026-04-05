@@ -19,6 +19,7 @@ It demonstrates fundamental concepts like locating web elements, handling user i
   - Explicit Wait (WebDriverWait)
 - Validation using assertions
 - XPath using text() and contains()
+- Dynamic password extraction from UI using string parsing (split method)
 
 ## Website Tested
 This project uses a practice application from Rahul Shetty Academy designed for learning Selenium automation concepts.
